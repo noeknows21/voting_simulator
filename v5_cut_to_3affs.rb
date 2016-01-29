@@ -221,21 +221,29 @@ class World
       case change_voter_politics
       when "1"
         @current.affiliation_obj = @@created_world.world_aff1
+        done_message
+        main_menu
       when "2"
         @current.affiliation_obj = @@created_world.world_aff2
+        done_message
+        main_menu
       when "3"
         @current.affiliation_obj = @@created_world.world_aff3
+        done_message
+        main_menu
       when "4"
         @current.affiliation_obj = @@created_world.world_aff4
+        done_message
+        main_menu
       when "5"
         @current.affiliation_obj = @@created_world.world_aff5
+        done_message
+        main_menu
       else
         puts
         puts "Invalid response, try again"
         update
       end
-      done_message
-      main_menu
     elsif update_v_reply == "n"
       update_name
     else #returns user to the update script if he/she entered an invalid input
@@ -340,6 +348,7 @@ class World
       puts
       puts "AND THE WINNER IS... #{winning_name}! CONGRATS!!!"
     end
+    exit
   end
 
   def election_day_vote_count
